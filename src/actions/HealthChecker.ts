@@ -16,12 +16,16 @@ export default class HealthChecker {
         });
     }
 
-    private static ConsoleErrorResponse(response: Response, apiDescription: ApiDescription): void {
+    private static async ConsoleErrorResponse(response: Response, apiDescription: ApiDescription): Promise<void> {
         console.log(
             "Could not establish connection with server :: ", 
             `Error trying to reach api ${apiDescription.apiName} on endpoint: ${apiDescription.endpoint}`
         );
         console.log(`Got response status ${response.status}`);
-        console.log(`Response :: `, response.json());
+        try {
+            console.log(`Response :: `, await response.json());
+        } catch (error) {
+            console.log("Also, response could not be read properly :: ", error)
+        }
     }
 }
