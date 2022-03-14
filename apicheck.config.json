@@ -1,7 +1,7 @@
 {
     "cronSchedule" : "* * * * *",
     "apiEndpoints" : [
-        { "apiName" : "youtube", "endpoint" : "https://www.youtube.com/watch?v=8uIUCSv9GGQ", "requiredStatus" : 200 }
+        { "apiName" : "youtube", "endpoint" : "https://www.youtube.com/watch?v=8uIUCSv9GGQ", "requiredStatus" : 500 }
     ],
     "discord" : {
         "notify" : false,
