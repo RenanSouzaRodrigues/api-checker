@@ -1,11 +1,12 @@
 {
+    "useCronSchedule": false,
     "cronSchedule" : "* * * * *",
     "apiEndpoints" : [
         { "apiName" : "youtube", "endpoint" : "https://www.youtube.com/watch?v=8uIUCSv9GGQ", "requiredStatus" : 200 }
     ],
     "discord" : {
-        "notify" : false,
-        "webhookEndpoint" : "",
+        "botToken": "token",
+        "webhookEndpoint" : "webhookEndpoint",
         "useEmbeds" : false
     }
 }
