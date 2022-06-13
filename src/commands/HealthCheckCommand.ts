@@ -1,19 +1,12 @@
+import { DiscordAPIError } from "discord.js";
 import fetch from "node-fetch";
-import { Response } from "node-fetch";
+import Discord from "discord.js";
 import { ApiCheckConfig } from "../types/ApiCheckConfig";
 import { ApiDescription } from "../types/ApiDescription";
 
-export default class HealthChecker {
-    public static CheckApisEndpoints(apiCheckConfig: ApiCheckConfig): void {
-        apiCheckConfig.apiEndpoints.forEach(async (api) => {
-            const response = await fetch(api.endpoint);
-            if(api.requiredStatus && response.status != api.requiredStatus) {    
-                this.ConsoleErrorResponse(response, api);
-                if(apiCheckConfig.discord.notify) {
-                    // call discord notification
-                }
-            }
-        });
+export default class HealthCheckeCommand {
+    public static CheckApisEndpoints(client: Discord.Client): void {
+        
     }
 
     private static async ConsoleErrorResponse(response: Response, apiDescription: ApiDescription): Promise<void> {
