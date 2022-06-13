@@ -1,5 +1,5 @@
 export type NotificationChannelConfig = {
-    notify: boolean,
+    botToken: string,
     webhookEndpoint: string,
     useEmbeds?: boolean
 }
